@@ -2,56 +2,36 @@ console.log("SCRIPT");
 
 const credenciales =
     [
-        { user: "Paco", pwd: "123" },
-        { user: "Pedro", pwd: "123" },
-        { user: "Karina", pwd: "123" }
+        { user: "Paco", pwd: "123", id: "111" },
+        { user: "Pedro", pwd: "123", id: "222" },
+        { user: "Karina", pwd: "123", id: "333" }
     ];
-
-const dtsCuentas =
-    [
-        { user: "Paco", saldo: "100" },
-        { user: "Pedro", saldo: "200" },
-        { user: "Karina", saldo: "300" }
-    ];
-
-console.log("SCRIPT");
-
-
-
-var usuario = document.getElementById("usr").value;
-
-console.log(usr)
-
 
 console.log("SCRIPT");
 
 function validar() {
-    var usuario = document.getElementById("usr").value;
-    var Contraseña = document.getElementById("pass").value;
+    let tUser = document.getElementById("usr").value;
+    let tPss = document.getElementById("pass").value;
+    let resBusca = credenciales.find(credencial => credencial.user == tUser)
 
-    if (usuario == "uno" && Contraseña == "1234") {
+    console.log(resBusca)
+
+    if (resBusca != null && resBusca.pwd == tPss) {
         alert("Usuario y Contraseña validos");
-    }
-    else {
-        alert("Verifique sus credenciales");
-    }
-}
+        sessionStorage.id = resBusca.id;
 
-function next() {
-    location.href = ("./inicio.html")
-}
+        // sessionStorage.Apellido = 'Sesion'
+        // lastNameS  = sessionStorage.Apellido
 
-function busca() {
-    var tUser = document.getElementById("usr").value;
-    var tPss = document.getElementById("pass").value;
-    const resBusca = credenciales.find( credencial => credencial.user == tUser)
-   
-    if (resBusca != null && resBusca.pwd == tPss ) {
-        alert("Usuario y Contraseña validos");
+        // localStorage.Apellido = 'local'
+        // lastNameL  = localStorage.Apellido
+
         location.href = ("./inicio.html")
     }
     else {
         alert("Verifique sus credenciales");
     }
-    console.log(resBusca)
+    // console.log(resBusca)
 }
+
+console.log("SCRIPT - FIN ");
