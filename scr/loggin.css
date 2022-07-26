@@ -1,0 +1,14 @@
+body {
+    background-color: aliceblue;
+}
+
+.datos {
+   
+    margin-top: 5rem;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center space-evenly;
+ 
+}
